@@ -1,0 +1,49 @@
+﻿@using veteriner.Models
+@model List<detay>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    @using (Html.BeginForm())
+    {
+        <div style="width:25%;float:left">
+                @Html.TextBox("ara", null, new { @class = "form-control", @placeholder = "ara.." })
+                <div style="float:left">
+                    <input type="submit" name="btn" value="Ara" class="btn btn-info"/>
+                </div>
+        </div>    
+    }
+
+</div>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Hasta Adı</th>
+        <th>Fotoğraf</th>
+        <th>Sahip Adı</th>
+        <th>Cins</th>
+        <th>Tanı</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+    </tr>
+    <tbody>
+        @foreach (var dty in Model)
+        {
+            <tr>
+
+                <td>@dty.id</td>
+                <td>@dty.Hasta_ad</td>
+                <td><img src="~/Content/images/@dty.foto" width="80" height="80"></td>
+                <td>@dty.Sahip_ad</td>
+                <td>@dty.Cins</td>
+                <td>@dty.Tani</td>
+                <td>@Html.ActionLink("Sil", "Sil", new { id = dty.id }, new { @class = "btn btn-danger" })</td>
+                <td><a href="/Guncelle.cshtml/@dty.id" class="btn btn-warning">Güncelle</a></td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/hasta/Ekle" class="btn btn-primary">Hasta Ekle</a>
+

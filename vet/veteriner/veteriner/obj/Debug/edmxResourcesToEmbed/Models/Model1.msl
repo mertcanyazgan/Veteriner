@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="hasta_takip_sistemiEntities">
+    <EntitySetMapping Name="detay">
+      <EntityTypeMapping TypeName="Model.detay">
+        <MappingFragment StoreEntitySet="detay">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Hasta_ad" ColumnName="Hasta ad" />
+          <ScalarProperty Name="foto" ColumnName="foto" />
+          <ScalarProperty Name="Sahip_ad" ColumnName="Sahip ad" />
+          <ScalarProperty Name="Cins" ColumnName="Cins" />
+          <ScalarProperty Name="Tani" ColumnName="Tani" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

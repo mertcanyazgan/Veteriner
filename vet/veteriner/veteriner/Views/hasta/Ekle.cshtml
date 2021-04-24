@@ -1,0 +1,43 @@
+﻿@model veteriner.Models.detay
+@{
+    ViewBag.Title = "Ekle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Ekle", "hasta", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="contanier">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="=form-group">
+                    <label>Hasta Adı</label>
+                    <input type="text" name="Hasta_ad" class="form-control" />
+                </div>
+
+                <div class="=form-group">
+                    @Html.Label("Fotoğraf", new { @class = "control-label col-md-2" })
+
+                    <input type="file" name="File" class="form-control" />
+                </div>
+
+                <div class="=form-group">
+                    <label>Sahip Adı</label>
+                    <input type="text" name="Sahip_ad" class="form-control" />
+                </div>
+
+                <div class="=form-group">
+                    <label>Cins</label>
+                    <input type="text" name="Cins" class="form-control" />
+                </div>
+
+                <div class="=form-group">
+                    <label>Tanı</label>
+                    <input type="text" name="Tani" class="form-control" />
+                </div>
+                <button class="btn btn-primary" type="submit">Ekle</button>
+                <a href="/hasta/Index">Hasta Listesi</a>
+            </div>
+        </div>
+    </div>
+}
+
